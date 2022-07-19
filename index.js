@@ -5,7 +5,7 @@ const managerQuestions = [
     {
         name: 'manager',
         type: 'input',
-        message: 'What is the name of the team manage?'
+        message: 'What is the name of the team manager?'
     },
     {
         name: 'managerID',
@@ -15,7 +15,7 @@ const managerQuestions = [
     {
         name: 'managerEmail',
         type: 'input',
-        message: 'What is the team managers ID?'
+        message: 'What is the team managers Email?'
     },
     {
         name: 'managerOffice',
@@ -87,3 +87,23 @@ const intQuestions = [
         choices: ['Engineer', 'Intern', 'No more Team Members']
     }
 ]
+ function startTeam(memType){
+    var moreTeam = true;
+    if(moreTeam){
+        inquirer.prompt(memType).then((answers) =>{
+            console.log(answers)
+            
+            if(answers.nextMem === 'No more Team Members'){
+                return 'no more'
+                // later add function that will create html page and write to dist
+            }
+            else if(answers.nextMem === 'Engineer'){
+                startTeam(engQuestions)
+            }
+            else if(answers.nextMem === 'Intern'){
+                startTeam(intQuestions)
+            }
+        })
+    }
+ }
+ startTeam(managerQuestions)
