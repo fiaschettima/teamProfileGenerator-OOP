@@ -90,12 +90,10 @@ const intQuestions = [
         choices: ['Engineer', 'Intern', 'No more Team Members']
     }
 ]
+createTeam = [];
  function startTeam(memType){
-    var moreTeam = true;
-    if(moreTeam){
         inquirer.prompt(memType).then((answers) =>{
-            console.log(answers)
-
+            createTeam.push(answers)
             if(answers.nextMem === 'No more Team Members'){
                 return 'no more'
                 // later add function that will create html page and write to dist
@@ -108,5 +106,6 @@ const intQuestions = [
             }
         })
     }
- }
+  
+ 
  startTeam(managerQuestions)
