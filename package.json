@@ -1,6 +1,28 @@
 {
+  "name": "teamprofilegenerator-oop",
+  "version": "1.0.0",
+  "description": "The goal of this application is to allow the user to input new team members and assign them each certain\r values such as id and email. Then take them information and print it to an html page\r showing a card for each employee displaying that information. (As seen bellow)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiaschettima/teamProfileGenerator-OOP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fiaschettima/teamProfileGenerator-OOP/issues"
+  },
+  "homepage": "https://github.com/fiaschettima/teamProfileGenerator-OOP#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.3"
   }
 }
