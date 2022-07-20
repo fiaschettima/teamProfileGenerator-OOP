@@ -11,4 +11,13 @@ describe("Employee Class", () => {
             email: 'johnSnow@got.com'
     }));
     });
+    it('fills in parameters not given with placeholders', () => {
+      const blankEmp = new Employee();
+      expect(blankEmp).toEqual(expect.objectContaining(
+        { 
+          name: "Not Given", 
+          id: '0000',
+          email: '...@got.com'
+        }));
+    })
 });
