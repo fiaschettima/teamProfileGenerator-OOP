@@ -4,9 +4,10 @@ const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const generateHTML = require('./src/teamBuilding');
+const teamBuilding = require('./src/teamBuilding');
 const path = require('path')
-const distPath = path.resolve();
+const distPath = path.resolve(__dirname, 'dist');
+
 const managerQuestions = [
     {
         name: 'manager',
@@ -106,8 +107,10 @@ createTeam = [];
 
  function checkForMore(answers){
     if(answers === 'No more Team Members'){
-        console.log(createTeam[0].getName())
-        fs.writeFile(distPath, generateHTML(createTeam))
+        const manName = createTeam[0].getName()
+        fs.writeFile(path.join(distPath, `${manName}.html`), teamBuilding(createTeam), err =>{
+            err? console.log(err) : console.log('Page Generated')
+        })
         return 'no more'
     }
     else if(answers === 'Engineer'){

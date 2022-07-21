@@ -1,6 +1,6 @@
 // write template literals for intern,employee,manager,engineer
 // combine into template literal that generates whole html filled in by the cards 
-function managerCard(){
+const managerCard = () => {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
@@ -16,13 +16,52 @@ function managerCard(){
     </div>
     `
 }
-function engineerCard(){
-    return ``
+const engineerCard = () => {
+    return `
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+        <h3>Name</h3>
+        <h4>Title</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+    </div>`
 }
-function internCard(){
-    return ``
+const internCard = ()=>{
+    return `
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+        <h3>Name</h3>
+        <h4>Title</h4>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+    </div>
+    `
 }
-function generateHTML(people){
+// for loop here to iterate through people array and make cards for each
+const makeEmployees = people => {
+    for(let i =0; i<people.length; i++ ){
+        if(people[i].getRole() === 'Manager'){
+            managerCard(people[i])
+        }
+        if(people[i].getRole() === 'Intern'){
+            internCard(people[i])
+        }
+        if(people[i].getRole() === 'Engineer'){
+            engineerCard(people[i])
+        }
+    }
+}
+const  teamBuilding = () => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -47,7 +86,7 @@ function generateHTML(people){
             </div>
             <div class="row">
                 <!-- cards here -->
-                <p>${people}</p>
+                
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -55,4 +94,4 @@ function generateHTML(people){
     </html>
     `
 }
-module.exports =generateHTML;
+module.exports = teamBuilding
