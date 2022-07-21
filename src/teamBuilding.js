@@ -1,48 +1,49 @@
 // write template literals for intern,employee,manager,engineer
 // combine into template literal that generates whole html filled in by the cards 
-const managerCard = () => {
+const managerCard = (person) => {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>Name</h3>
-        <h4>Title</h4>
+        <h3>${person.getName()}}</h3>
+        <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getEmail()}</li>
+            <li class="list-group-item">${person.getOfficeNum()}</li>
           </ul>
     </div>
     `
 }
-const engineerCard = () => {
+const engineerCard = (person) => {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>Name</h3>
-        <h4>Title</h4>
+        <h3>${person.getName()}}</h3>
+        <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getEmail()}</li>
+            <li class="list-group-item">${person.getGithub()}</li>
           </ul>
-    </div>`
+    </div>
+    `
 }
-const internCard = ()=>{
+const internCard = (person)=>{
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>Name</h3>
-        <h4>Title</h4>
+        <h3>${person.getName()}}</h3>
+        <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getEmail()}</li>
+            <li class="list-group-item">${person.getSchool()}</li>
           </ul>
     </div>
     `
