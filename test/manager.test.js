@@ -12,4 +12,13 @@ describe("Manager Class", () => {
             officeNumber: 101
     }));
     });
+    it('should return the employees email when getRole is called', () => {
+      const mang1 = new Manager('John', 1, 'johnSnow@got.com', 101);
+      expect(mang1.getRole()).toEqual('Manager')
+    });
+
+    it('should return the employees role when getoffice number is called', () => {
+      const mang1 = new Manager('John', 1, 'johnSnow@got.com', 101);
+      expect(mang1.getOfficeNum()).toEqual(101)
+    });
 });

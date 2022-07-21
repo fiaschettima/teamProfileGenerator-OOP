@@ -20,7 +20,6 @@ describe("Employee Class", () => {
       const empl1 = new Employee('John', 1, 'johnSnow@got.com');
       expect(empl1.getId()).toEqual(1)
     });
-
     it('should return the employees email when getemail is called', () => {
       const empl1 = new Employee('John', 1, 'johnSnow@got.com');
       expect(empl1.getEmail()).toEqual('johnSnow@got.com')
@@ -30,5 +29,4 @@ describe("Employee Class", () => {
       const empl1 = new Employee('John', 1, 'johnSnow@got.com');
       expect(empl1.getRole()).toEqual('Employee')
     });
-
 });
