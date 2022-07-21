@@ -11,13 +11,24 @@ describe("Employee Class", () => {
             email: 'johnSnow@got.com'
     }));
     });
-    it('fills in parameters not given with placeholders', () => {
-      const blankEmp = new Employee();
-      expect(blankEmp).toEqual(expect.objectContaining(
-        { 
-          name: "Not Given", 
-          id: '0000',
-          email: '...@got.com'
-        }));
-    })
+    it('should return the employees name when getName is called', () => {
+      const empl1 = new Employee('John', 1, 'johnSnow@got.com');
+      expect(empl1.getName()).toEqual('John')
+    });
+
+    it('should return the employees id when getid is called', () => {
+      const empl1 = new Employee('John', 1, 'johnSnow@got.com');
+      expect(empl1.getId()).toEqual(1)
+    });
+
+    it('should return the employees email when getemail is called', () => {
+      const empl1 = new Employee('John', 1, 'johnSnow@got.com');
+      expect(empl1.getEmail()).toEqual('johnSnow@got.com')
+    });
+
+    it('should return the employees role when getRole is called', () => {
+      const empl1 = new Employee('John', 1, 'johnSnow@got.com');
+      expect(empl1.getRole()).toEqual('Employee')
+    });
+
 });

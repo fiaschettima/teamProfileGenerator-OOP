@@ -12,4 +12,13 @@ describe("Engineer Class", () => {
             gitHub: 'jSnow'
     }));
     });
+    it('should return the employees email when getemail is called', () => {
+      const eng1 = new Engineer('John', 1, 'johnSnow@got.com', 'jSnow');
+      expect(eng1. getGithub()).toEqual('jSnow')
+    });
+
+    it('should return the employees role when getRole is called', () => {
+      const eng1 = new Engineer('John', 1, 'johnSnow@got.com', 'jSnow');
+      expect(eng1.getRole()).toEqual('Engineer')
+    });
 });
