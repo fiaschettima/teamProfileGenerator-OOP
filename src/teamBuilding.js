@@ -1,15 +1,14 @@
-// write template literals for intern,employee,manager,engineer
-// combine into template literal that generates whole html filled in by the cards 
+
 const managerCard = (person) => {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>${person.getName()}}</h3>
+        <h3>${person.getName()}</h3>
         <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getId()}</li>
             <li class="list-group-item">${person.getEmail()}</li>
             <li class="list-group-item">${person.getOfficeNum()}</li>
           </ul>
@@ -20,12 +19,12 @@ const engineerCard = (person) => {
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>${person.getName()}}</h3>
+        <h3>${person.getName()}</h3>
         <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getId()}</li>
             <li class="list-group-item">${person.getEmail()}</li>
             <li class="list-group-item">${person.getGithub()}</li>
           </ul>
@@ -36,12 +35,12 @@ const internCard = (person)=>{
     return `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">
-        <h3>${person.getName()}}</h3>
+        <h3>${person.getName()}</h3>
         <h4>${person.getRole()}</h4>
     </div>
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">${person.getID()}</li>
+            <li class="list-group-item">${person.getId()}</li>
             <li class="list-group-item">${person.getEmail()}</li>
             <li class="list-group-item">${person.getSchool()}</li>
           </ul>
@@ -49,20 +48,23 @@ const internCard = (person)=>{
     `
 }
 // for loop here to iterate through people array and make cards for each
+cards = "";
 const makeEmployees = people => {
+    console.log(people[0].getRole())
     for(let i =0; i<people.length; i++ ){
         if(people[i].getRole() === 'Manager'){
-            managerCard(people[i])
+           cards += managerCard(people[i])
         }
         if(people[i].getRole() === 'Intern'){
-            internCard(people[i])
+            cards += internCard(people[i])
         }
         if(people[i].getRole() === 'Engineer'){
-            engineerCard(people[i])
+            cards += engineerCard(people[i])
         }
     }
+    return cards;
 }
-const  teamBuilding = () => {
+const  teamBuilding = (people) => {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -86,7 +88,7 @@ const  teamBuilding = () => {
                 </div>
             </div>
             <div class="row">
-                <!-- cards here -->
+                ${makeEmployees(people)}
                 
             </div>
         </div>

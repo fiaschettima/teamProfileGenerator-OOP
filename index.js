@@ -5,9 +5,9 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const teamBuilding = require('./src/teamBuilding');
-const path = require('path')
+const path = require('path');
 const distPath = path.resolve(__dirname, 'dist');
-
+createTeam = [];
 const managerQuestions = [
     {
         name: 'manager',
@@ -94,10 +94,9 @@ const intQuestions = [
         choices: ['Engineer', 'Intern', 'No more Team Members']
     }
 ]
-createTeam = [];
+
  function startTeam(memType){
         inquirer.prompt(memType).then((answers) =>{
-        console.log(answers)
         const manager = new Manager(answers.manager, answers.managerID, answers.managerEmail, answers.managerOffice)
         createTeam.push(manager)
         checkForMore(answers.nextMem)
@@ -108,6 +107,7 @@ createTeam = [];
  function checkForMore(answers){
     if(answers === 'No more Team Members'){
         const manName = createTeam[0].getName()
+        console.log(createTeam)
         fs.writeFile(path.join(distPath, `${manName}.html`), teamBuilding(createTeam), err =>{
             err? console.log(err) : console.log('Page Generated')
         })
@@ -122,7 +122,6 @@ createTeam = [];
  }
 function newEngineer(engQuestions){
     inquirer.prompt(engQuestions).then((answers) =>  {
-        console.log(answers);
         const engineer = new Engineer(answers.engName, answers.engID, answers.engEmail, answers.engGit)
         createTeam.push(engineer)
         checkForMore(answers.nextMem);
@@ -130,7 +129,6 @@ function newEngineer(engQuestions){
 }
 function newIntern(intQuestions){
     inquirer.prompt(intQuestions).then((answers) =>  {
-        console.log(answers);
         const intern = new Intern(answers.intName, answers.intID, answers.intEmail, answers.intSch)
         createTeam.push(intern)
         checkForMore(answers.nextMem);
