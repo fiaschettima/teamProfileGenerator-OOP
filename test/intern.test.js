@@ -12,13 +12,13 @@ describe("Intern Class", () => {
             school: 'Knights Watch'
     }));
     });
-    it('should return the employees email when getemail is called', () => {
-      const eng1 = new Engineer('John', 1, 'johnSnow@got.com', 'jSnow');
-      expect(eng1. getGithub()).toEqual('jSnow')
+    it('should return the employees email when getschool is called', () => {
+      const int1 = new Intern('John', 1, 'johnSnow@got.com', 'Knights Watch');
+      expect(int1. getSchool()).toEqual('Knights Watch')
     });
 
     it('should return the employees role when getRole is called', () => {
-      const eng1 = new Engineer('John', 1, 'johnSnow@got.com', 'jSnow');
-      expect(eng1.getRole()).toEqual('Engineer')
+      const int1 = new Intern('John', 1, 'johnSnow@got.com', 'Knights Watch');
+      expect(int1.getRole()).toEqual('Intern')
     });
 });
