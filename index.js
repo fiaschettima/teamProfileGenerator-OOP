@@ -4,7 +4,9 @@ const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const generateHTML = require('./src/teamBuilding')
+const generateHTML = require('./src/teamBuilding');
+const path = require('path')
+const distPath = path.resolve();
 const managerQuestions = [
     {
         name: 'manager',
@@ -104,8 +106,8 @@ createTeam = [];
 
  function checkForMore(answers){
     if(answers === 'No more Team Members'){
-        console.log(createTeam)
-        fs.writeFile(`./dist/${createTeam[0].getName()}.html`, generateHTML(createTeam))
+        console.log(createTeam[0].getName())
+        fs.writeFile(distPath, generateHTML(createTeam))
         return 'no more'
     }
     else if(answers === 'Engineer'){
