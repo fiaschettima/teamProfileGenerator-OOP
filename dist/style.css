@@ -1,0 +1,22 @@
+:root{
+    --gunmetal: #292f36ff;
+    --medium-turquoise: #4ecdc4ff;
+    --white: #ffffffff;
+    --bittersweet: #ff6b6bff;
+    --lightbitter: #FF9090;
+}
+*{
+    color:  var(--white);
+}
+body{
+    background-color: var(--gunmetal);
+    color: var(--white);
+}
+.card{
+    background-color: var(--bittersweet);
+}
+.list-group-item{
+    background-color:  var(--lightbitter);
+    color: var(--white);
+
+}
