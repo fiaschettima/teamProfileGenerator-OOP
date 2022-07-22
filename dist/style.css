@@ -1,9 +1,9 @@
 :root{
-    --gunmetal: #292f36ff;
-    --medium-turquoise: #4ecdc4ff;
+    --gunmetal: #373C43;
     --white: #ffffffff;
     --bittersweet: #ff6b6bff;
     --lightbitter: #FF9090;
+    --lighterBitt: #FFB5B5;
 }
 *{
     color:  var(--white);
@@ -14,9 +14,29 @@ body{
 }
 .card{
     background-color: var(--bittersweet);
+    box-shadow:
+    0.5px 2px 1px #FFB5B5,
+    0.8px 2.7px 4px #FFA3A3,
+    1.0px 4.5px 5px #FF9090,
+    1.1px 5.8px 6px #FF8787,
+    1.2px 6.5px 8px #FF7E7E,
+    1.3px 7px 10px #FF6B6B;
+
 }
 .list-group-item{
     background-color:  var(--lightbitter);
     color: var(--white);
 
+}
+.list-group-item:hover{
+    background-color:  var(--lighterBitt);
+    color: var(--white);
+
+}
+.card-header h3,
+.card-subtitle h4{
+    margin-left: 1em;
+}
+.card-subtitle h4{
+    padding-top: 0.5em;
 }

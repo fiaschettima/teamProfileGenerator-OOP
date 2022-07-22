@@ -106,8 +106,7 @@ const intQuestions = [
 
  function checkForMore(answers){
     if(answers === 'No more Team Members'){
-        const manName = createTeam[0].getName()
-        console.log(createTeam)
+        const manName = createTeam[0].getName().replace(/\s/g, '')
         fs.writeFile(path.join(distPath, `${manName}.html`), teamBuilding(createTeam), err =>{
             err? console.log(err) : console.log('Page Generated')
         })

@@ -7,7 +7,7 @@ const managerCard = (person) => {
                         <h3>${person.getName()}</h3>
                     </div>
                     <div class="card-subtitle">
-                        <h4><i class="fa-solid fa-user-tie"></i>${person.getRole()}</h4>
+                        <h4><i class="fa-solid fa-user-tie"></i> ${person.getRole()}</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-group ">
@@ -43,7 +43,7 @@ const engineerCard = (person) => {
                         <h3>${person.getName()}</h3>
                     </div>
                     <div class="card-subtitle">
-                        <h4><i class="fa-solid fa-user-gear"></i>${person.getRole()}</h4>
+                        <h4><i class="fa-solid fa-user-gear"></i> ${person.getRole()}</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-group ">
@@ -62,7 +62,7 @@ const engineerCard = (person) => {
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                 <div class="fw-bold">GitHub:</div>
-                                ${person.getGithub()}
+                                <a href="https://github.com/${person.getGithub()}">${person.getGithub()}</a>
                                 </div>
                             </li>
                         </ul>
@@ -79,7 +79,7 @@ const internCard = (person)=>{
                         <h3>${person.getName()}</h3>
                     </div>
                     <div class="card-subtitle">
-                        <h4><i class="fa-solid fa-user-graduate"></i>${person.getRole()}</h4>
+                        <h4><i class="fa-solid fa-user-graduate"></i> ${person.getRole()}</h4>
                     </div>
                     <div class="card-body">
                         <ul class="list-group ">
