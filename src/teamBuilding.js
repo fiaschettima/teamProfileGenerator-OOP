@@ -1,7 +1,7 @@
 // cards are tabbed so far to keep good indentation when HTML is generated
 const managerCard = (person) => {
     return `
-            <div class ="col-12 col-sm-6 col-md-4 g-4">
+            <div class ="col-12 col-md-4 g-4">
                 <div class="card">
                     <div class="card-header">
                         <h3>${person.getName()}</h3>
